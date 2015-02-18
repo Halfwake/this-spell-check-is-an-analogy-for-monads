@@ -1,3 +1,7 @@
+module Spell
+( candidates
+) where
+
 import Data.Set (Set)
 import qualified Data.Set as Set
 import Data.Map (Map)
