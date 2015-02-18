@@ -40,7 +40,8 @@ editRepeat word n = Set.unions $ map editOnce $ Set.toList $ editRepeat word (n 
 
 
 known :: Map String Int -> Set String -> Set String
-known table words = Set.fromList [word | word <- Set.toList words, Map.member word table]
+known table words = Set.filter inTable words
+  where inTable word = Map.member word table
 
 candidates :: String -> Map String Int -> Set String
 candidates word table = Set.unions [this, edit, editTwice]
