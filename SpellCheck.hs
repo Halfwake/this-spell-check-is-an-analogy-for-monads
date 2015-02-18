@@ -1,4 +1,4 @@
-module Spell
+module SpellCheck
 ( candidates
 ) where
 
@@ -6,13 +6,6 @@ import Data.Set (Set)
 import qualified Data.Set as Set
 import Data.Map (Map)
 import qualified Data.Map as Map
-
-countItems :: (Ord a) => [a] -> Map a Int
-countItems xs = foldl step Map.empty xs
-  where step map word = if Map.member word map
-                        then Map.adjust (+1) word map
-                        else Map.insert word 0 map
-
 
 splits :: [a] -> [([a], [a])]
 splits xs = [(take n xs, drop n xs) | n <- [1..length xs]]
