@@ -46,3 +46,5 @@ candidates word table = Set.unions [this, edit, editTwice]
         this = lookup $ Set.singleton word
         edit = lookup $ editOnce word
         editTwice = lookup $ editRepeat word 2
+
+        
