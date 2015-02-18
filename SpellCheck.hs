@@ -12,7 +12,7 @@ splits xs = [(take n xs, drop n xs) | n <- [1..length xs]]
 
 
 alphabet :: String
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+alphabet = ['a'..'z']
 
 deletes :: String -> Set String
 deletes xs = Set.fromList [a ++ drop 1 b | (a, b) <- splits xs]
